@@ -1,0 +1,176 @@
+:root {
+    --bg-color: #f8f9fa;       /* Blanc cassé très doux pour le fond */
+    --text-color: #212529;     /* Gris presque noir pour une lecture confortable */
+    --primary-color: #4a5d6e;  /* Bleu-gris élégant pour les boutons */
+    --hover-color: #344452;    /* Bleu-gris plus foncé pour le survol */
+    --text-light: #ffffff;     /* Blanc pur pour le texte des boutons */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0%;
+    padding: 2%; /* Remplacé 20px par 2% de la largeur de l'écran */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+    box-sizing: border-box; 
+}
+
+h1{
+    text-align:center;
+}
+
+h2{
+    text-align: center;
+}
+
+button{
+    /* Tes dimensions fixes */
+    width: 16%;
+    height: 10%;
+    
+    /* Sécurités adaptatives (exprimées en em, l'équivalent des % pour le texte) */
+    min-width: 9em; 
+    min-height: 2.8em;
+
+    /* Couleurs et style */
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 1%; /* Remplacé 6px par un léger arrondi en % */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    
+    /* Ombre fluide (les ombres utilisent des % d'opacité à la fin) */
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.10); 
+    
+    /* Transition fluide */
+    transition: all 0.3s ease; 
+
+    /* Alignement du texte */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0%; 
+}
+
+button:hover{
+    background-color: var(--hover-color);
+    transform: translateY(-5%); /* Le bouton se soulève de 5% de sa propre hauteur */
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.15); 
+}
+
+/* Effet quand on clique sur le bouton */
+button:active{
+    transform: translateY(0%); 
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.10);
+}
+
+.conteneur-scroll {
+    max-height: 10em;        /* Hauteur max avant l'apparition du scroll */
+    
+    /* Les règles pour les scrollbars */
+    overflow-y: auto;        /* Active la scrollbar verticale SI le texte dépasse */
+    overflow-x: hidden;      /* SUPPRIME et INTERDIT la scrollbar horizontale */
+    
+    /* Sécurité pour le texte */
+    word-break: break-word;  /* Force les mots trop longs à se couper pour ne pas dépasser sur les côtés */
+    padding-right: 5%;       /* Laisse de l'espace pour la scrollbar verticale */
+    box-sizing: border-box;
+}
+
+.conteneur-scroll2 {
+    max-height: 30em;        /* Hauteur max avant l'apparition du scroll */
+    
+    /* Les règles pour les scrollbars */
+    overflow-y: auto;        /* Active la scrollbar verticale SI le texte dépasse */
+    overflow-x: hidden;      /* SUPPRIME et INTERDIT la scrollbar horizontale */
+    
+    /* Sécurité pour le texte */
+    word-break: break-word;  /* Force les mots trop longs à se couper pour ne pas dépasser sur les côtés */
+    padding-right: 5%;       /* Laisse de l'espace pour la scrollbar verticale */
+    box-sizing: border-box;
+}
+
+/* On nettoie le style de base du tableau pour qu'il soit niquel */
+table {
+    width: 100%;
+    max-width: 90%;
+    border-collapse: collapse;
+    margin: -0.5% 0%;
+    background-color: var(--primary-color); 
+    color: var(--text-light);
+    border-radius: 1%;
+    box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.10); 
+}
+
+th, td {
+    padding: 1.5% 2%;             
+    text-align: left;             
+    border-bottom: 0.05em solid rgba(255, 255, 255, 0.1); 
+    vertical-align: top;     /* Aligne le texte en haut des cellules si une colonne est plus grande */
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); 
+    transition: background-color 0.2s ease;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    
+    /* Pousse le footer tout en bas de l'écran grâce au Flexbox du body */
+    margin-top: auto;      
+    padding: -1% 0%;        
+    font-size: 0.85rem;    
+    color: var(--text-color);
+    opacity: 0.7;          
+    letter-spacing: 0.05em;
+}
+
+.accueil-liens {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 4%;                 /* Crée un espace de 4% entre les deux boutons */
+    width: 100%;             /* Prend toute la largeur pour bien centrer */
+    margin-top: 3%;          /* Ajoute un petit espace entre le texte et les boutons */
+}
+
+.photo-conteneur {
+    display: block;
+    margin: 0% auto 3% auto; /* Centre le cadre horizontalement et met 3% d'espace en bas */
+    
+    /* On définit une taille fixe et propre pour le cadre */
+    width: 12em;              /* Largeur du cadre (environ 190px, ajustable) */
+    height: 12em;             /* Hauteur identique pour un carré parfait */
+    
+    /* Le design du cadre stylé */
+    border-radius: 50%;       /* Rend le cadre parfaitement rond */
+    background-color: #ffffff; /* Fond blanc derrière la photo au cas où */
+    padding: 0.4em;           /* Crée un espace blanc élégant entre la photo et la bordure */
+    
+    /* Bordure assortie à tes boutons et ombre pour le relief */
+    border: 0.2em solid var(--primary-color); 
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
+    
+    /* Sécurité absolue : tout ce qui dépasse du cadre est masqué/coupé */
+    overflow: hidden;         
+}
+
+.photo-profil {
+    width: 100%;              /* Force la photo à prendre 100% de la largeur du cadre */
+    height: 100%;             /* Force la photo à prendre 100% de la hauteur du cadre */
+    
+    /* LA PROPRIÉTÉ MAGIQUE : */
+    object-fit: cover;        /* Adapte et recadre automatiquement la photo sans JAMAIS la déformer */
+    
+    border-radius: 50%;       /* Force aussi la photo à être ronde */
+    display: block;
+}
