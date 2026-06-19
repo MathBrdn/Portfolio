@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAE 3.01 - Mettre en œuvre un système de transmission</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1></h1>
+        <nav>
+            <a href="index.html">
+                <button type="button"><h4>Accueil</h4></button>
+            </a>
+            <a href="ac.html">
+                <button type="button"><h4>AC</h4></button>
+            </a>
+            <a href="ce.html">
+                <button type="button"><h4>CE</h4></button>
+            </a>
+            <a href="ressources.html">
+                <button type="button"><h4>Ressources</h4></button>
+            </a>
+            <a href="sae.html">
+                <button type="button"><h4>SAE</h4></button>
+            </a>
+        </nav>
+
+        <main class="sae-conteneur">
+            
+            <header class="sae-header">
+                <h1>SAE 3.01 : Mettre en œuvre un système de transmission</h1>
+            </header>
+
+            <section class="sae-section">
+                <h2>Description du projet</h2>
+                <p>
+                    Cette SAE consiste à créer une prise wifi connecté. Cela passe par plusieurs étapes:
+                    <ul>
+                        <li>Réaliser des schéma d'électronique.</li>
+                        <li>Construire la maquette de la prise en utilisant des leds, des résistance, des boutons pousoir un capteur de température, une raspberry py et une carte électronique ESP32. Les leds ont pour but de simuler l'état de la prise (on/off).</li>
+                        <li>Développer des scripts Arduino en C++ permettant de donné d'envoyer des instructions à la carte électronic et d'envoyé des donnés à un topic MQTT</li>
+                        <li>Développer une application mobile en language scratch permettant de configurer la prise (on/off, plage horraire etc..) et d'afficher des données (température de la prise). Les données utilisés s'obtienne via le topic MQTT</li>
+                        <li>Développer une application web en language scratch permettant de configurer la prise (on/off, plage horraire etc..) et d'afficher des données (température de la prise). Les données utilisés s'obtienne via le topic MQTT</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section class="sae-section">
+                <h2>Ressources et Livrables</h2>
+                <p>Retrouvez ci-dessous les fichiers et documents liés à la réalisation de ce projet :</p>
+                
+                <div class="sae-fichiers">
+                    Lien vers le GitHub de l'application web:
+                    <ul>
+                        <li><a href="https://github.com/MathBrdn/prise_django" target="_blank" class="btn">GitHub de la SAE</a></li>
+                    </ul>
+                    Scripts Arduino:
+                    <ul>
+                        <li><a href="pieces_jointes/led1.ino" target="_blank" class="btn">led1 + capteur de température</a></li>
+                        <li><a href="pieces_jointes/led2.ino" target="_blank" class="btn">led2</a></li>
+                    </ul>                  
+                    Quelques photos et vidéo de la maquette électronique:
+                    <ul>
+                        <li><a href="pieces_jointes/SAE301Video.mp4" target="_blank" class="btn">Vidéo de la prise en fonctionnement</a></li>
+                        <li><a href="pieces_jointes/SAE301schéma.jpg" target="_blank" class="btn">Schéma électronique</a></li>
+                        <li><a href="pieces_jointes/SAE301maquette.jpg" target="_blank" class="btn">Maquette électronique</a></li>
+                        <li><a href="pieces_jointes/SAE301web.jpg" target="_blank" class="btn">Appercu de l'interface web</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ now|date:"Y" }} Mathias Brodin. Tous droits réservés.</p>
+        </footer>
+
+    </body>
+</html>

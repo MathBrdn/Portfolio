@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAE 3.02 - Développer des applications communicantes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1></h1>
+        <nav>
+            <a href="index.html">
+                <button type="button"><h4>Accueil</h4></button>
+            </a>
+            <a href="ac.html">
+                <button type="button"><h4>AC</h4></button>
+            </a>
+            <a href="ce.html">
+                <button type="button"><h4>CE</h4></button>
+            </a>
+            <a href="ressources.html">
+                <button type="button"><h4>Ressources</h4></button>
+            </a>
+            <a href="sae.html">
+                <button type="button"><h4>SAE</h4></button>
+            </a>
+        </nav>
+
+        <main class="sae-conteneur">
+            
+            <header class="sae-header">
+                <h1>SAE 3.02 : Développer des applications communicantes</h1>
+            </header>
+
+            <section class="sae-section">
+                <h2>Description du projet</h2>
+                <p>
+                    Cette SAE est dans la continuité de la ressource R3.09 Programmation événementielle. Elle consiste à utiliser deux nouvelles notions (les threads et les sockets) pour développer un réseau de routage en Oignon en python. Plus concraitement dans un routage en oignon il y a trois acteurs (le Master, les Routeurs et les Clients). Les Clients cherchent à communiquer entre eux, mais ne connaissent pas, le Master va donc servir à les mettre en relation en faisant passer le trafic par un minimum de trois routeurs virtuels. Chaque routeur se trouvant sur la route du message va ajouter une couche de chiffrent sur ce dernier. Ainsi le message arrive chez le bon client capable de le déchiffrer grâce à sa clé privé. 
+                </p>
+            </section>
+
+            <section class="sae-section">
+                <h2>Ressources et Livrables</h2>
+                <p>Retrouvez ci-dessous les fichiers et documents liés à la réalisation de ce projet :</p>
+                
+                <div class="sae-fichiers">
+                    <ul>
+                        <li><a href="https://github.com/MathBrdn/SAE3.02" target="_blank" class="btn">GitHub du projet (contient les script et les documentations technique et utilisateur).</a></li>
+                        <li><a href="pieces_jointes/SAE302.mp4" target="_blank" class="btn">Vidéo de démonstration</a></li>
+                    </ul>
+                    
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ now|date:"Y" }} Mathias Brodin. Tous droits réservés.</p>
+        </footer>
+
+    </body>
+</html>

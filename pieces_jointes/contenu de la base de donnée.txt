@@ -1,0 +1,43 @@
+contenu de la base de donnée:
+
+#Création de la DATABASE projet_integratif
+sudo mysql
+CREATE DATABASE projet_integratif;
+
+#Création du user qui pourra utiliser la base de données depuis le serveur Django
+CREATE USER 'titi'@'192.168.100.10' IDENTIFIED BY 'titi';
+GRANT ALL PRIVILEGES ON projet_integratif.* TO titi;
+
+#Création de la table Capteur (notre version)
+CREATE TABLE Capteur (
+->capteur_id INT NOT NULL PRIMARY KEY, 
+->nom VARCHAR(50),
+->lieu VARCHAR(100)
+->);
+
+#Création de la table Capteur (celle qu'on aurait du faire)
+CREATE TABLE Capteur (
+->capteur_id VARCHAR(12) PRIMARY KEY, 
+->nom VARCHAR(50),
+->lieu VARCHAR(100)
+->);
+
+
+#Création de la table Data (notre version)
+CREATE TABLE Data (
+->data_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+->instant DATETIME,
+->temperature INT NOT NULL,
+->capteur_id INT NOT NULL,
+->FOREIGN KEY (capteur_id) REFERENCE Capteur(capteur_id) ON DELETE CASCADE ON UPDATE CASCADE
+->);
+
+#Création de la table Data (celle qu'on aurait du faire)
+CREATE TABLE Data (
+->instant DATETIME,
+->temperature INT NOT NULL,
+->capteur_id VARCHAR(12),
+->FOREIGN KEY (capteur_id) REFERENCE Capteur(capteur_id) ON DELETE CASCADE ON UPDATE CASCADE
+->);
+
+

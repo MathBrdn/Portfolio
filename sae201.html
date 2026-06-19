@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAE 2.01 - Construire un réseau pour une petite structure</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1></h1>
+        <nav>
+            <a href="index.html">
+                <button type="button"><h4>Accueil</h4></button>
+            </a>
+            <a href="ac.html">
+                <button type="button"><h4>AC</h4></button>
+            </a>
+            <a href="ce.html">
+                <button type="button"><h4>CE</h4></button>
+            </a>
+            <a href="ressources.html">
+                <button type="button"><h4>Ressources</h4></button>
+            </a>
+            <a href="sae.html">
+                <button type="button"><h4>SAE</h4></button>
+            </a>
+        </nav>
+
+        <main class="sae-conteneur">
+            
+            <header class="sae-header">
+                <h1>SAE 2.01 : Construire un réseau pour une petite structure</h1>
+            </header>
+
+            <section class="sae-section">
+                <h2>Description du projet</h2>
+                <p>
+                    Cette SAE consiste à reproduire une topologie réseau donnée via GNS3(un logiciel de virtualisation de réseau). Une fois la maquettage terminer, il y a une liste de protocole de routage et switching à appliquer. Cette structure se doit d'être sécurisé et redondé pour éviter les pertes, on utilise donc des protocoles comme LACP ou des access list. Au niveau routage des protocoles comme RIP, OSPF et des routes statiques. Au niveau switch il est essentiel de faire une segmentation par Vlan. 
+                </p>
+            </section>
+            <section class="sae-section">
+                <h2>Ressources et Livrables</h2>
+                <p>Retrouvez ci-dessous les fichiers et documents liés à la réalisation de ce projet :</p>
+                
+                <div class="sae-fichiers">
+                    <a href="pieces_jointes/Plan d'adressage.txt" target="_blank" class="btn">Plan d'addressage de la topologie</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ now|date:"Y" }} Mathias Brodin. Tous droits réservés.</p>
+        </footer>
+
+    </body>
+</html>

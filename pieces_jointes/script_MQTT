@@ -1,0 +1,70 @@
+import paho.mqtt.client as mqtt
+import time
+import random
+from datetime import datetime
+import uuid
+import os
+
+BROKER = "test.mosquitto.org"
+PORT = 1883
+TOPIC_DATA = ["IUT/Colmar2025/SAE2.04/Maison1", "IUT/Colmar2025/SAE2.04/Maison2"]
+TOPIC_CONTROL = "IUT/Colmar2025/SAE2.04/control"
+
+pieces = ["sejour", "cuisine", "chambre", "salle_de_bain", "garage", "grenier", "salon", "toilette"]
+emplacements = ["sur une table", "sur le mur", "par terre", "sur une étagère"]
+
+# Correction ici : on ne peut pas utiliser range avec float
+temperatures = [round(x * 0.1 + 15, 1) for x in range(250)]  # 15 à 40, pas à pas de 0.1
+
+running = False  # État du script
+
+def on_connect(client, userdata, flags, rc):
+    print("Connecté au broker")
+    client.subscribe(TOPIC_CONTROL)
+
+def on_message(client, userdata, msg):
+    global running
+    command = msg.payload.decode()
+
+    if command == "start":
+        print("Commande reçue : démarrage")
+        running = True
+    elif command == "stop":
+        print("Commande reçue : arrêt")
+        running = False
+
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(BROKER, PORT, 60)
+client.loop_start()
+
+try:
+    while True:
+        if running:
+            id_hex = uuid.uuid4().hex[:12].upper()
+            piece = random.choice(pieces)
+            temperature = random.choice(temperatures)
+            emplacement = random.choice(emplacements)
+            date_now = datetime.now().strftime("%d/%m/%Y")
+            heure_now = datetime.now().strftime("%H:%M:%S")
+
+            message = f"Id={id_hex},piece={piece},date={date_now},heure={heure_now},temp={temperature},emplacement={emplacement}"
+            print("Envoi :", message)
+            
+            # Écriture dans un fichier texte
+            os.makedirs("logs", exist_ok=True)
+            with open("logs/log.txt", "a") as fichier:
+              fichier.write(message + "\n")
+
+            for topic in TOPIC_DATA:
+                client.publish(topic, message)
+
+            time.sleep(5)
+        else:
+            time.sleep(1)
+
+except KeyboardInterrupt:
+    print("Arrêt manuel")
+    client.disconnect()
+    client.loop_stop()

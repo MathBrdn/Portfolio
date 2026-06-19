@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAE 2.03 - Solution informatique pour l’entreprise</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1></h1>
+        <nav>
+            <a href="index.html">
+                <button type="button"><h4>Accueil</h4></button>
+            </a>
+            <a href="ac.html">
+                <button type="button"><h4>AC</h4></button>
+            </a>
+            <a href="ce.html">
+                <button type="button"><h4>CE</h4></button>
+            </a>
+            <a href="ressources.html">
+                <button type="button"><h4>Ressources</h4></button>
+            </a>
+            <a href="sae.html">
+                <button type="button"><h4>SAE</h4></button>
+            </a>
+        </nav>
+
+        <main class="sae-conteneur">
+            
+            <header class="sae-header">
+                <h1>SAE 2.03 : Solution informatique pour l’entreprise</h1>
+            </header>
+
+            <section class="sae-section">
+                <h2>Description du projet</h2>
+                <p>
+                    L'objectif de cette SAE est de développer une application web pour une entreprise, dans mon cas une compagnie aérienne. Ce projet en groupe de 4 commence par une gestion de projet afin de prévoir la répartitions des tâches que ça soit entre équipe ou dans le temps. Cela demande ensuite toute une réflexion dans l'organisation de la base de données (externe à l'application), en effet, il faut trouver une bonne logique de base de données qui permette la gestion du trafic aerien. Puis il y a la partie la plus longues "le développement du projet django", créer des actions de CRUD dans views.py, gérer les liens dans urls.py, créer des templates html et de l'afichage css etc... Et bien sur finir avec une soutenance accompagné d'un support de présentation. 
+                </p>
+            </section>
+
+            <section class="sae-section">
+                <h2>Ressources et Livrables</h2>
+                <p>Retrouvez ci-dessous les fichiers et documents liés à la réalisation de ce projet :</p>
+                
+                <div class="sae-fichiers">
+                    <ul>
+                        <li><a href="pieces_jointes/Schéma relationnel.png" target="_blank" class="btn">Schéma relationnel de la base de donnée</a></li>
+                        <li><a href="pieces_jointes/SAE23 diaporama.pdf" target="_blank" class="btn">support de présentation</a></li>
+                        <li><a href="https://github.com/MathBrdn/SAE23-final" target="_blank" class="btn">GitHub de la SAE</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ now|date:"Y" }} Mathias Brodin. Tous droits réservés.</p>
+        </footer>
+
+    </body>
+</html>

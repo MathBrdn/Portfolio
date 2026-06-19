@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAE 3.03 Dev Cloud - Réseau multi-sites hébergeant des services virtualisés</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1></h1>
+        <nav>
+            <a href="index.html">
+                <button type="button"><h4>Accueil</h4></button>
+            </a>
+            <a href="ac.html">
+                <button type="button"><h4>AC</h4></button>
+            </a>
+            <a href="ce.html">
+                <button type="button"><h4>CE</h4></button>
+            </a>
+            <a href="ressources.html">
+                <button type="button"><h4>Ressources</h4></button>
+            </a>
+            <a href="sae.html">
+                <button type="button"><h4>SAE</h4></button>
+            </a>
+        </nav>
+
+        <main class="sae-conteneur">
+            
+            <header class="sae-header">
+                <h1>SAE 3.03 Dev Cloud : Réseau multi-sites hébergeant des services virtualisés</h1>
+            </header>
+
+            <section class="sae-section">
+                <h2>Description du projet</h2>
+                <p>
+                    Cette SAE consiste à créer une topologie réseau où l'on retrouve plusieurs sites reliés à un opérateur. Le but étant de mettre en pratique les différents protocoles de routage (Inter/Extra AS) comme par exemple RIP, OSPF, BGP, vrf etc... Elle se regroupe en 3 parties (FAI, Services et LAN). Dans la partie services il faut également déployer un DHCP, un DNS et un Active Directory.
+                </p>
+            </section>
+
+            <section class="sae-section">
+                <h2>Ressources et Livrables</h2>
+                <p>Retrouvez ci-dessous les fichiers et documents liés à la réalisation de ce projet :</p>
+                
+                <div class="sae-fichiers">
+                    <ul>
+                        <li><a href="pieces_jointes/Capture d’écran 2026-06-18 162245.png" target="_blank" class="btn">Partie Service</a></li>
+                        <li><a href="pieces_jointes/Rapport_SAÉ_multi-sites_Partie_LAN_Yoann_MULLER.pdf" target="_blank" class="btn">Rapport Partie LAN</a></li>
+                        <li><a href="pieces_jointes/Rapport SAE3.03 FAI.pdf" target="_blank" class="btn">Rapport Partie FAI</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; {{ now|date:"Y" }} Mathias Brodin. Tous droits réservés.</p>
+        </footer>
+
+    </body>
+</html>
